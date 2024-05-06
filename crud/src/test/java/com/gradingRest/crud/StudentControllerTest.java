@@ -57,7 +57,7 @@ public class StudentControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe"));
+                .andExpect((ResultMatcher) jsonPath("$.name").value("Duvan Rodriguez"));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class StudentControllerTest {
 
         Long studentId = 1L;
         StudentModel student = new StudentModel();
-        student.setName("John Doe");
+        student.setName("Duvan Rodriguez");
 
 
         when(studentService.getById(studentId)).thenReturn(Optional.of(student));
@@ -73,7 +73,7 @@ public class StudentControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/student/{id}", studentId))
                 .andExpect(status().isOk())
-                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe"));
+                .andExpect((ResultMatcher) jsonPath("$.name").value("Duvan Rodriguez"));
     }
 
 
