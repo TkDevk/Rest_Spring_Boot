@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+//Set BaseURL for each request
 const BASEURL = "http://localhost:4000";
 
 const AskingForm = () => {
-
-  const [warning, setWarning] = useState("");  
+  
+  const [warning, setWarning] = useState(false);
   //Set values in order to handle the information
   const [inputFirstQuestion, setInputFirstQuestion] = useState({
     question: "",
@@ -123,7 +124,8 @@ const AskingForm = () => {
     }
 
     //As soon as the data is send all the values will be reset
-
+    //The warning empty values as well
+    setWarning(false);
     setInputDataFirstAnswer({
       answerOne: "",
       answerTwo: "",
@@ -233,43 +235,49 @@ const AskingForm = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <section>
+      <form 
+      className="form-container"
+      onSubmit={onSubmit}>
+        <h1>Examen</h1>
+        <span>Primera pregunta</span>
+        <section
+        className="first-question-container"
+        >
           {/*First Input*/}
           <input
             type="text"
             name="question"
             onChange={handleInputFirst}
             value={inputFirstQuestion.question}
-            placeholder="Ingresa la pregunta"
+            placeholder="Ingresa la primera pregunta"
           />
           <input
             type="text"
             name="answerOne"
             onChange={handleInputFirst}
             value={inputDataFirstAnswer.answerOne}
-            placeholder="Ingresa la primera pregunta"
+            placeholder="Ingresa la posible primera respuesta"
           />
           <input
             type="text"
             name="answerTwo"
             onChange={handleInputFirst}
             value={inputDataFirstAnswer.answerTwo}
-            placeholder="Ingresa la segunda pregunta"
+            placeholder="Ingresa la posible segunda respuesta"
           />
           <input
             type="text"
             name="answerThird"
             onChange={handleInputFirst}
             value={inputDataFirstAnswer.answerThird}
-            placeholder="Ingresa la tercera pregunta"
+            placeholder="Ingresa la posible tercer respuesta"
           />
           <input
             type="text"
             name="answerFourth"
             value={inputDataFirstAnswer.answerFourth}
             onChange={handleInputFirst}
-            placeholder="Ingresa la cuarta pregunta"
+            placeholder="Ingresa la posible cuarta respuesta"
           />
           <input
             type="number"
@@ -280,7 +288,10 @@ const AskingForm = () => {
           />
         </section>
         {/*Second Input*/}
-        <section>
+        <span>Segunda pregunta</span>
+        <section
+        className="second-question-container"
+        >
           <input
             type="text"
             name="question"
@@ -293,28 +304,28 @@ const AskingForm = () => {
             name="answerOne"
             onChange={handleInputSecond}
             value={inputDataSecondAnswer.answerOne}
-            placeholder="Ingresa la primera pregunta"
+            placeholder="Ingresa la posible primera respuesta"
           />
           <input
             type="text"
             name="answerTwo"
             onChange={handleInputSecond}
             value={inputDataSecondAnswer.answerTwo}
-            placeholder="Ingresa la segunda pregunta"
+            placeholder="Ingresa la posible segunda respuesta"
           />
           <input
             type="text"
             name="answerThird"
             onChange={handleInputSecond}
             value={inputDataSecondAnswer.answerThird}
-            placeholder="Ingresa la tercera pregunta"
+            placeholder="Ingresa la posible tercera respuesta"
           />
           <input
             type="text"
             name="answerFourth"
             value={inputDataSecondAnswer.answerFourth}
             onChange={handleInputSecond}
-            placeholder="Ingresa la cuarta pregunta"
+            placeholder="Ingresa la posible cuarta respuesta"
           />
           <input
             type="number"
@@ -325,7 +336,10 @@ const AskingForm = () => {
           />
         </section>
         {/*Third Input*/}
-        <section>
+        <span>Tercera pregunta</span>
+        <section
+        className="third-question-container"
+        >
           <input
             type="text"
             name="question"
@@ -338,28 +352,28 @@ const AskingForm = () => {
             name="answerOne"
             onChange={handleInputThird}
             value={inputDataThirdAnswer.answerOne}
-            placeholder="Ingresa la primera pregunta"
+            placeholder="Ingresa la primera posible respuesta"
           />
           <input
             type="text"
             name="answerTwo"
             onChange={handleInputThird}
             value={inputDataThirdAnswer.answerTwo}
-            placeholder="Ingresa la segunda pregunta"
+            placeholder="Ingresa la segunda posible respuesta"
           />
           <input
             type="text"
             name="answerThird"
             onChange={handleInputThird}
             value={inputDataThirdAnswer.answerThird}
-            placeholder="Ingresa la tercera pregunta"
+            placeholder="Ingresa la tercera posible respuesta"
           />
           <input
             type="text"
             name="answerFourth"
             value={inputDataThirdAnswer.answerFourth}
             onChange={handleInputThird}
-            placeholder="Ingresa la cuarta pregunta"
+            placeholder="Ingresa la cuarta posible respuesta"
           />
           <input
             type="number"
@@ -370,7 +384,10 @@ const AskingForm = () => {
           />
         </section>
         {/*Fourth Input*/}
-        <section>
+        <span>Cuarta pregunta</span>
+        <section
+        className="fourth-question-container"
+        >
           <input
             type="text"
             name="question"
@@ -383,28 +400,28 @@ const AskingForm = () => {
             name="answerOne"
             onChange={handleInputFourth}
             value={inputDataFourthAnswer.answerOne}
-            placeholder="Ingresa la primera pregunta"
+            placeholder="Ingresa la primera posible respuesta"
           />
           <input
             type="text"
             name="answerTwo"
             onChange={handleInputFourth}
             value={inputDataFourthAnswer.answerTwo}
-            placeholder="Ingresa la segunda pregunta"
+            placeholder="Ingresa la segunda posible respuesta"
           />
           <input
             type="text"
             name="answerThird"
             onChange={handleInputFourth}
             value={inputDataFourthAnswer.answerThird}
-            placeholder="Ingresa la tercera pregunta"
+            placeholder="Ingresa la tercera posible respuesta"
           />
           <input
             type="text"
             name="answerFourth"
             value={inputDataFourthAnswer.answerFourth}
             onChange={handleInputFourth}
-            placeholder="Ingresa la cuarta pregunta"
+            placeholder="Ingresa la cuarta posible respuesta"
           />
           <input
             type="number"
@@ -414,9 +431,9 @@ const AskingForm = () => {
             placeholder="Ingresa cual es la respuesta correcta"
           />
         </section>
-        <button>Enviar</button>
+        <button>Añadir Examen</button>
       </form>
-      {setWarning?warning:null}
+      {warning && <p className="warning-msg">Por favor ingresa todos los datos</p>}
     </>
   );
 };

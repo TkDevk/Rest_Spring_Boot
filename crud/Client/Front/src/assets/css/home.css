@@ -1,0 +1,15 @@
+.home-text{
+    color:#fff;
+    text-align: justify;
+    letter-spacing: none;
+    padding: 1rem;
+    width: 60%;
+}
+.home-btn{
+    padding: 1rem;
+    width: auto;
+}
+.home-title{
+    color:#fff;
+    font-size:4rem;
+}

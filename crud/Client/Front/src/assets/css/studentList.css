@@ -1,0 +1,19 @@
+.show-list-container{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+
+}
+.list-students-container{
+    padding:.5rem;
+}
+.list-exam-container{
+    padding:.5rem;
+}
+.list-style{
+    list-style: none;
+    color:#fff;
+}
+.student_info{
+    color:#fff;
+}
