@@ -5,7 +5,7 @@ const BASEURL = "http://localhost:4000/student";
 
 const StudentsList = () => {
   const [students, setStudents] = useState([]);
-
+//UseEffect it will be helpuful to control the render information
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,7 +23,7 @@ const StudentsList = () => {
 
   return (
     <>
-
+    {/**Map incoming data */}
       {students.map(student => (
         <section 
         className="show-list-container"

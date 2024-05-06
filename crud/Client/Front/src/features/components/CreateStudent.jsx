@@ -97,16 +97,8 @@ const CreateStudent = () => {
         <button>Enviar </button>
       </form>
        {warning && <p className="warning-msg">Por favor ingresa todos los datos</p>}
-       {showButton && <Link to="/addExam"><button> Crear Examen </button></Link>} {/* Mostrar el botón después de enviar el formulario */}
+       {showButton && <Link to="/addExam"><button> Crear Examen </button></Link>} 
     </>
   );
 };
 export default CreateStudent;
-
-/**
- student_name
- city
- age
- time_zone
- * 
- */
