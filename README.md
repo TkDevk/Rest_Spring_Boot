@@ -220,6 +220,9 @@ Cuando terminemos de crear los examenes nos podemos dirigir lista estudiantes do
 
 ## Pruebas PostMan
 
+
+- [Link Metodos Postman](https://restless-robot-980863.postman.co/workspace/New-Team-Workspace~cc29b173-861b-4b95-b68b-f1a8ab9cb01f/collection/32528228-41fe16e8-8e08-4cad-86f1-342cecdd583a)
+
 ### Crear Estudiante
 ```http
   http://localhost:4000/student
