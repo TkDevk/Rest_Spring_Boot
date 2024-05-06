@@ -205,18 +205,18 @@ Se puede probar mediante Front o PostMan, si lo quieres probar con PostMan pasa 
 ## Front
 
 Tan pronto todo este conectado, vas a ver que te lleva a una pagina principal donde podemos crear un Estudiante, en la parte de Lista de Estudiantes no veremos nada ya que aun no creamos ningun estudiante, damos click en añadir estudiante.
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./sc/HomeView.PNG)
 
 Luego nos lleva a un formulario, tan pronto creemos un estudiante podremos ver un boton que dice crear examen.
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./sc/AddStudent.PNG)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./sc/AllowAddExam.PNG)
 
 Luego vamos a crear examen y nos direcciona a un formulario para crear las cuatro preguntas y con sus respectivas cuatro respuestas posibles con una solucion correcta.
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./sc/AnswerExam.PNG)
 Cuando terminemos de crear los examenes nos podemos dirigir lista estudiantes donde veremos nuestro estudiante creado con sus examenes asociados por id.
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./sc/CompletForm.PNG)
 
 ## Pruebas PostMan
 
