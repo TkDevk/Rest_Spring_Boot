@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @Service
 public class ExamService {
+    //Brings the connection instead of a connection String
     @Autowired
     IExamRepository examRepository;
     public ArrayList<ExamModel> getExams(){

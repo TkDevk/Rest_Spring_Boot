@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
+//Allow methods and connection from my Front
+@CrossOrigin(origins = "http://localhost:5173/")
 @RequestMapping("/student")
 public class StudentController {
-
+    //bring the methods that allow getStudents, insertStudent and getStudentById to check the exams related to each one
     @Autowired
     private StudentService studentService;
     //Jpa.Repository Method
@@ -20,6 +22,8 @@ public class StudentController {
         //provide helpful methods
         return this.studentService.getStudents();
     }
+
+    //Insert student method being called by model from controller
     @PostMapping
     public StudentModel insertStudent(@RequestBody StudentModel student){
         return this.studentService.insertStudent(student);

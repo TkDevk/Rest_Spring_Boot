@@ -12,14 +12,14 @@ public class StudentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long student_id;
     @Column
-    private String name;
+    private String student_name;
     @Column
     private String city;
     @Column
     private int age;
     @Column
-    private int time_zone;
-
+    private String time_zone;
+    //entity just helped me to create the relation about one student can have many exams
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<ExamModel> exams;
 
@@ -32,11 +32,11 @@ public class StudentModel {
     }
 
     public String getName() {
-        return name;
+        return student_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.student_name = name;
     }
 
     public String getCity() {
@@ -55,11 +55,11 @@ public class StudentModel {
         this.age = age;
     }
 
-    public int getTimeZone() {
+    public String getTimeZone() {
         return time_zone;
     }
 
-    public void setTimeZone(int time_zone) {
+    public void setTimeZone(String time_zone) {
         this.time_zone = time_zone;
     }
 

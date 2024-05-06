@@ -1,8 +1,9 @@
 package com.gradingRest.crud.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-
+//Calling entity in order to get those helpful methods
 @Entity
 @Table(name = "question")
 public class QuestionModel {
@@ -16,7 +17,7 @@ public class QuestionModel {
         @Column
         private String third_answer;
         @Column
-        private String forth_answer;
+        private String fourth_answer;
 
         public Long getQuestionId() {
                 return question_id;
@@ -50,12 +51,12 @@ public class QuestionModel {
                 this.third_answer = third_answer;
         }
 
-        public String getForth_answer() {
-                return forth_answer;
+        public String getFourth_answer() {
+                return fourth_answer;
         }
 
         public void setForth_answer(String forth_answer) {
-                this.forth_answer = forth_answer;
+                this.fourth_answer = fourth_answer;
         }
 
         public ExamModel getExam() {
@@ -65,9 +66,12 @@ public class QuestionModel {
         public void setExam(ExamModel exam) {
                 this.exam = exam;
         }
+        //Same with Exam model
+        //Big loop between the FK and the questions
+        //Many questions can belong to one exam
+        @JsonIgnore
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "FK_exam_id")
         private ExamModel exam;
-
 
 }
