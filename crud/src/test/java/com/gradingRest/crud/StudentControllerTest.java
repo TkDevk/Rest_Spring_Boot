@@ -46,7 +46,7 @@ public class StudentControllerTest {
     public static void testInsertStudent() throws Exception {
 
         StudentModel student = new StudentModel();
-        student.setName("John Doe");
+        student.setName("Duvan Rodriguez");
 
 
         when(studentService.insertStudent(any(StudentModel.class))).thenReturn(student);
