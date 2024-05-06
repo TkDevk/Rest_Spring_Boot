@@ -57,7 +57,7 @@ public class StudentControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe")); // Verificar si el nombre del estudiante devuelto es correcto
+                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe"));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class StudentControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/student/{id}", studentId))
                 .andExpect(status().isOk())
-                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe")); // Verificar si el nombre del estudiante devuelto es correcto
+                .andExpect((ResultMatcher) jsonPath("$.name").value("John Doe"));
     }
 
 
