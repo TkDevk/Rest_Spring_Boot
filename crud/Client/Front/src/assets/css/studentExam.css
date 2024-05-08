@@ -1,0 +1,12 @@
+.student_info{
+    color:#fff;
+}
+.list-container-show-answer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+li{
+    gap: 2rem;
+    padding: .6rem;
+}
