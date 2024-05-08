@@ -41,57 +41,9 @@ public class ExamController {
             // Add exam to a list which belongs to each student
             student.getExams().add(exam);
         }
-        // Get all the questions related to the exam
-        List<QuestionModel> questions = exam.getQuestions();
-
-        // Set variable to get Total Score
-        int totalScore = 0;
-
-        // Iterate for each question and get the answer
-        for (QuestionModel question : questions) {
-            // Get the right answer's index
-            int correctAnswerIndex = exam.getCorrect_answer();
-
-            // Check what answer is correct and added it 25 points
-            String selectedAnswer = null;
-            switch (correctAnswerIndex) {
-                case 1:
-                    selectedAnswer = question.getFirst_answer();
-                    break;
-                case 2:
-                    selectedAnswer = question.getSecond_answer();
-                    break;
-                case 3:
-                    selectedAnswer = question.getThird_answer();
-                    break;
-                case 4:
-                    selectedAnswer = question.getFourth_answer();
-                    break;
-                default:
-                    // Check if the index belongs to one asnwer
-                    break;
-            }
-
-            // Get the choosen answer by the Student
-            String studentAnswer = getChoseAnswer();
-
-            // Check if the choosen answer is the right one
-            if (selectedAnswer != null && selectedAnswer.equals(studentAnswer)) {
-                // Sumar 25 puntos al puntaje total
-                totalScore += 25;
-            }
-        }
-
-        // Asign total score to exam
-        exam.setScore(totalScore);
-
         // Save exam with data about the student and the answer
         return examService.insertExam(exam);
 
     }
 
-    private String getChoseAnswer() {
-
-        return "Chose answer";
-    }
 }
